@@ -1,0 +1,24 @@
+{
+    "name": "al-rimi/submit",
+    "description": "A fully customizable submission system for your students",
+    "type": "library",
+    "require": {
+        "php": ">=8.0",
+        "laravel/framework": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlRimi\\Submit\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AlRimi\\Submit\\Providers\\SubmitServiceProvider"
+            ],
+            "aliases": {
+                "Submit": "AlRimi\\Submit\\Facades\\Submit"
+            }
+        }
+    }
+}
