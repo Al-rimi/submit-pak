@@ -1,6 +1,6 @@
 {
     "name": "al-rimi/submit",
-    "description": "A fully customizable submission system for your students",
+    "description": "A fully customizable submission system for managing student submissions",
     "type": "library",
     "require": {
         "php": ">=8.0",
@@ -27,7 +27,26 @@
             }
         }
     },
+    "authors": [
+        {
+            "name": "Al raimi Abdullah",
+            "email": "abdullah@syalux.com",
+            "role": "Developer",
+            "homepage": "https://github.com/Al-rimi"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "package",
+        "submission",
+        "student-management",
+        "customizable"
+    ],
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/Al-rimi/submit-pak/issues",
+        "source": "https://github.com/Al-rimi/submit-pak"
+    },
     "repositories": {
         "packagist": {
             "type": "composer",
