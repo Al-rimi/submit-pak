@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class StudentController extends Controller
+class StudentController
 {
     /**
      * Handle the submission of files by students.
