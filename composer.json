@@ -1,6 +1,6 @@
 {
     "name": "al-rimi/submit",
-    "description": "A fully customizable submission system for managing student submissions",
+    "description": "A semple submit system for managing student submissions",
     "type": "library",
     "require": {
         "php": ">=8.0",

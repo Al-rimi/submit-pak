@@ -14,7 +14,6 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
     <title>Submit</title>
-    <link rel="stylesheet" href="{{ asset('assets\app-uie1891d.css') }}">
     <script>
         const deadlineDate = new Date("<?= env('SUBMISSION_DEADLINE') ?>").getTime();
     </script>
@@ -22,6 +21,8 @@
         $submissionDeadline = \Carbon\Carbon::parse(env('SUBMISSION_DEADLINE'));
         $isPastDeadline = now()->greaterThan($submissionDeadline);
     @endphp
+
+    @vite(['resources/css/submit.css', 'resources/js/submit.js'])
 </head>
 
 <body>
@@ -126,8 +127,6 @@
             <li></li>
         </ul>
     </div>
-
-    <script src="{{ asset('assets\app-n21vw71c.js') }}"></script>
 </body>
 
 </html>
