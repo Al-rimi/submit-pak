@@ -1,6 +1,6 @@
 {
     "name": "al-rimi/submit",
-    "description": "A semple submit system for managing student submissions",
+    "description": "A simple submission system for managing student submissions.",
     "type": "library",
     "require": {
         "php": ">=8.0",
@@ -12,6 +12,11 @@
         "illuminate/support": "^10.0 || ^11.0",
         "illuminate/http": "^10.0 || ^11.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "mockery/mockery": "^1.5",
+        "orchestra/testbench": "^8.0"
+    },
     "autoload": {
         "psr-4": {
             "AlRimi\\Submit\\": "src/"
@@ -20,7 +25,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "AlRimi\\Submit\\Providers\\SubmitServiceProvider"
+                "AlRimi\\Submit\\SubmitServiceProvider"
             ],
             "aliases": {
                 "Submit": "AlRimi\\Submit\\Facades\\Submit"
@@ -52,5 +57,7 @@
             "type": "composer",
             "url": "https://packagist.phpcomposer.com"
         }
-    }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
