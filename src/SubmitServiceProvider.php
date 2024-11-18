@@ -11,29 +11,31 @@ class SubmitServiceProvider extends ServiceProvider
         // Publish configuration file
         $this->publishes([
             __DIR__ . '/Config/submit.php' => config_path('submit.php'),
-        ], 'config');
-
-        // Load migrations
-        $this->loadMigrationsFrom(__DIR__ . '/Database/Migrations');
+        ], ['config', 'laravel-assets']);
 
         // Load factories if applicable
         if (method_exists($this->app, 'make') && $this->app->bound('Illuminate\Database\Eloquent\Factory')) {
             $this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/Database/Factories');
         }
 
-        // Load routes
-        $this->loadRoutesFrom(__DIR__ . '/Routes/submit.php');
-
-        // Load views
-        $this->loadViewsFrom(__DIR__ . '/Resources/Views', 'submit');
-
-        // Publish compiled assets (CSS, JS, Images)
         $this->publishes([
-            __DIR__ . '/resources/css' => resource_path('css/vendor/submit'),
-            __DIR__ . '/resources/js' => resource_path('js/vendor/submit'),
-            __DIR__ . '/resources/images' => public_path('vendor/submit/images'),
-        ], 'vite-assets');
-        
+            __DIR__ . '/routes/submit.php' => routes_path(''),
+        ], ['routes', 'laravel-assets']);
+
+        // Publish resources
+        $this->publishes([
+            __DIR__ . '/resources/views' => resource_path('views'),
+        ], ['views', 'laravel-assets']);
+
+        $this->publishes([
+            __DIR__ . '/resources/css' => resource_path('css'),
+            __DIR__ . '/resources/js' => resource_path('js'),
+            __DIR__ . '/resources/images' => public_path('images'),
+        ], ['assets', 'laravel-assets']);
+
+        $this->publishes([
+            __DIR__ . '/seeders' => database_path('seeders'),
+        ], ['seeders', 'laravel-assets']);
     }
 
     public function register()
