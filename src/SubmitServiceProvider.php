@@ -15,7 +15,7 @@ class SubmitServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/Config/submit.php' => config_path('submit.php'),
-            __DIR__ . '/routes/submit.php' => routes_path(''),
+            __DIR__ . '/routes/submit.php' => routes_path(),
             __DIR__ . '/resources/views' => resource_path('views'),
             __DIR__ . '/resources/css' => resource_path('css'),
             __DIR__ . '/resources/js' => resource_path('js'),
