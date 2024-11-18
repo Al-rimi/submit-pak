@@ -8,7 +8,6 @@ class SubmitServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-
         if (method_exists($this->app, 'make') && $this->app->bound('Illuminate\Database\Eloquent\Factory')) {
             $this->app->make('Illuminate\database\Eloquent\Factory')->load(__DIR__ . '/database/dactories');
         }
