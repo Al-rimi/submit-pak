@@ -22,7 +22,7 @@ class SubmitServiceProvider extends ServiceProvider
         }
 
         // Load routes
-        $this->loadRoutesFrom(__DIR__ . '/Routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/Routes/submit.php');
 
         // Load views
         $this->loadViewsFrom(__DIR__ . '/Resources/Views', 'submit');
