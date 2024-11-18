@@ -22,8 +22,9 @@
         $isPastDeadline = now()->greaterThan($submissionDeadline);
     @endphp
 
-    @vite(['resources/css/submit.css', 'resources/js/submit.js'])
+    @vite(['resources/css/vendor/submit/submit.css', 'resources/js/vendor/submit/submit.js'])
 </head>
+
 
 <body>
     <h3 id="countdown"></h3>
@@ -33,7 +34,7 @@
     <div id="qrModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <img src="{{ asset('assets/ggak71.png') }}" alt="WeChat QR Code" class="qr-code">
+            <img src="{{ asset('vendor/submit/images/ggak71.png') }}" alt="WeChat QR Code" class="qr-code">
         </div>
     </div>
     <main class="mainContainer">

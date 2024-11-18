@@ -1,6 +1,6 @@
 <?php
 
-namespace AlRimi\Submit\Http\Controllers;
+namespace AlRimi\Submit\Controllers;
 
 use AlRimi\Submit\Models\Student;
 use AlRimi\Submit\Mail\CustomEmail;
