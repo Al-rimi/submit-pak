@@ -19,7 +19,7 @@ class UpdateViteConfigCommand extends Command
         }
 
         $viteConfig = file_get_contents($viteConfigPath);
-        $newInputs = "'src/resources/css/submit.css', 'src/resources/js/submit.js'";
+        $newInputs = "'resources/css/submit.css', 'resources/js/submit.js'";
 
         if (!str_contains($viteConfig, $newInputs)) {
             $viteConfig = preg_replace(

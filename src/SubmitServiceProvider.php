@@ -13,18 +13,18 @@ class SubmitServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__ . '/src/routes/submit.php');
-        $this->loadMigrationsFrom(__DIR__ . '/src/database/migrations');
-        $this->loadViewsFrom(__DIR__ . '/src/resources/views', 'submit');
+        $this->loadRoutesFrom(__DIR__ . '/routes/submit.php');
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'submit');
 
         $this->publishes([
-            __DIR__ . '/src/config/submit.php' => config_path('submit.php'),
-            __DIR__ . '/src/database/migrations' => database_path('migrations'),
-            __DIR__ . '/src/database/seeders' => database_path('seeders'),
-            __DIR__ . '/src/resources/views' => resource_path('views'),
-            __DIR__ . '/src/resources/css' => resource_path('css'),
-            __DIR__ . '/src/resources/js' => resource_path('js'),
-            __DIR__ . '/src/resources/images' => public_path('images'),
+            __DIR__ . '/config/submit.php' => config_path('submit.php'),
+            __DIR__ . '/database/migrations' => database_path('migrations'),
+            __DIR__ . '/database/seeders' => database_path('seeders'),
+            __DIR__ . '/resources/views' => resource_path('views'),
+            __DIR__ . '/resources/css' => resource_path('css'),
+            __DIR__ . '/resources/js' => resource_path('js'),
+            __DIR__ . '/resources/images' => public_path('images'),
         ], 'laravel-assets');
 
     }
@@ -38,7 +38,7 @@ class SubmitServiceProvider extends ServiceProvider
     {
         // Merge package configuration
         $this->mergeConfigFrom(
-            __DIR__ . '/src/config/submit.php',
+            __DIR__ . '/config/submit.php',
             'submit'
         );
 
