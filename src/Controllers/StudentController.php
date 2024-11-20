@@ -34,16 +34,14 @@ class StudentController
                           ->first();
 
         if ($student) {
-            // Create a unique folder name combining the student ID and name
+
             $folderName = $student->student_id . '_' . $student->student_name;
 
             // Check if the request contains files for upload
             if ($request->hasFile('files')) {
                 foreach ($request->file('files') as $file) {
-                    // Generate a unique file name to prevent conflicts
                     $fileName = $folderName . '-' . Str::random(4) . '-' . $file->getClientOriginalName();
 
-                    // Store the file in the designated public directory
                     $file->storeAs(
                         'student_submissions/' . $folderName,
                         $fileName,
@@ -56,8 +54,8 @@ class StudentController
             $student->increment('submit_count');
 
             // Send a notification email to the configured admin email address
-            $recipientEmail = config('submit.notification_email'); // Fetch email from config
-            Mail::to($recipientEmail)->send(new CustomEmail(
+            $recipientEmail = config('submit.notification_email');
+            Mail::to($recipientEmail)->send(new SubmitEmail(
                 $student->student_id,
                 $student->student_name
             ));
@@ -82,10 +80,8 @@ class StudentController
      */
     public function index()
     {
-        // Retrieve all student records
         $students = Student::all();
 
-        // Pass the students' data to the view named "submission"
         return view('submission', compact('students'));
     }
 }

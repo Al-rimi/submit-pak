@@ -47,8 +47,8 @@ class SubmitServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \AlRimi\Submit\Console\Commands\UpdateViteConfigCommand::class,
-                \AlRimi\Submit\Console\Commands\SubmitInstallCommand::class,
+                \AlRimi\Submit\Console\Commands\InstallSubmitCommand::class,
+                \AlRimi\Submit\Console\Commands\UninstallSubmitCommand::class,
             ]);
         }
     }
