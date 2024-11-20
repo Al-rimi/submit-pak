@@ -1,6 +1,6 @@
 <?php
 
-namespace AlRimi\Submit;
+namespace AlRimi\Submit\Console\Commands;
 
 use Illuminate\Console\Command;
 
