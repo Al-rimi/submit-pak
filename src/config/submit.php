@@ -28,10 +28,9 @@ return [
     | file using the key "SUBMISSION_DEADLINE" in ISO 8601 format 
     | (e.g., "YYYY-MM-DDTHH:MM:SS").
     |
-    | Default: '2024-12-25T23:59:59'
     |
     */
 
-    'submission_deadline' => env('SUBMISSION_DEADLINE', '2024-12-25T23:59:59'),
+    'submission_deadline' => env('SUBMISSION_DEADLINE', '2040-12-25T23:59:59'),
 
 ];

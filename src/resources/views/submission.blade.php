@@ -15,10 +15,10 @@
 
     <title>Submit</title>
     <script>
-        const deadlineDate = new Date("<?= env('SUBMISSION_DEADLINE') ?>").getTime();
+        const deadlineDate = new Date("<?= config('submit.submission_deadline') ?>").getTime();
     </script>
     @php
-        $submissionDeadline = \Carbon\Carbon::parse(env('SUBMISSION_DEADLINE'));
+        $submissionDeadline = \Carbon\Carbon::parse(config('submit.submission_deadline'));
         $isPastDeadline = now()->greaterThan($submissionDeadline);
     @endphp
 

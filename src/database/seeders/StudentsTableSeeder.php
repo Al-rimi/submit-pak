@@ -8,9 +8,13 @@ use Illuminate\Database\Seeder;
 class StudentsTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
-     * 
-     * Command: "php artisan db:seed --class=AlRimi\\Submit\\Database\\Seeders\\StudentsTableSeeder"
+     * Seed the application's database.
+     *
+     * This seeder populates the 'students' table with default data.
+     * You can extend this data or modify it as needed for development
+     * or testing environments.
+     *
+     * @return void
      */
     public function run()
     {

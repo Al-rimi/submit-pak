@@ -12,53 +12,80 @@ class StudentController
 {
     /**
      * Handle the submission of files by students.
+     * 
+     * This method validates the request, processes file uploads,
+     * updates the submission count, and notifies the admin via email.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
+        // Validate the incoming request data
         $validated = $request->validate([
-            'id' => 'required|digits:12',         // Validate student ID to be exactly 12 digits
-            'name' => 'required|string',         // Validate student name as a string
-            'files.*' => 'required|file|max:102400' // Validate files to be uploaded, with a max size of 100 MB
+            'id' => 'required|digits:12',          // Ensure the student ID is exactly 12 digits
+            'name' => 'required|string',          // Ensure the student name is provided as a string
+            'files.*' => 'required|file|max:102400' // Validate each file with a maximum size of 100 MB
         ]);
 
-        // Find the student by ID and name
+        // Retrieve the student record matching the provided ID and name
         $student = Student::where('student_id', $validated['id'])
                           ->where('student_name', $validated['name'])
                           ->first();
 
         if ($student) {
-            // Create a unique folder name based on student ID and name
+            // Create a unique folder name combining the student ID and name
             $folderName = $student->student_id . '_' . $student->student_name;
 
+            // Check if the request contains files for upload
             if ($request->hasFile('files')) {
                 foreach ($request->file('files') as $file) {
-                    // Generate a unique file name
+                    // Generate a unique file name to prevent conflicts
                     $fileName = $folderName . '-' . Str::random(4) . '-' . $file->getClientOriginalName();
-                    $file->storeAs('student_submissions/' . $folderName, $fileName, 'public'); // Store file in the public directory
+
+                    // Store the file in the designated public directory
+                    $file->storeAs(
+                        'student_submissions/' . $folderName,
+                        $fileName,
+                        'public'
+                    );
                 }
             }
 
-            // Increment the submission count for the student
+            // Increment the student's submission count
             $student->increment('submit_count');
 
-            // Send a notification email to the admin
-            $recipientEmail = env('NOTIFICATION_EMAIL'); // Fetch email from environment variables
-            Mail::to($recipientEmail)->send(new CustomEmail($student->student_id, $student->student_name));
+            // Send a notification email to the configured admin email address
+            $recipientEmail = config('submit.notification_email'); // Fetch email from config
+            Mail::to($recipientEmail)->send(new CustomEmail(
+                $student->student_id,
+                $student->student_name
+            ));
 
+            // Redirect back with a success message
             return redirect()->back()->with('success', 'Files submitted successfully.');
         } else {
-            // Return error if the student is not found
-            return redirect()->back()->withErrors(['message' => 'Student not found.']);
+            // Redirect back with an error message if the student is not found
+            return redirect()->back()->withErrors([
+                'message' => 'Student not found.'
+            ]);
         }
     }
 
     /**
      * Display the list of students.
+     * 
+     * This method retrieves all students from the database
+     * and passes the data to the submission view.
+     *
+     * @return \Illuminate\View\View
      */
     public function index()
     {
-        // Retrieve all students
+        // Retrieve all student records
         $students = Student::all();
-        return view('submission', compact('students')); // Pass students data to the view
+
+        // Pass the students' data to the view named "submission"
+        return view('submission', compact('students'));
     }
 }
