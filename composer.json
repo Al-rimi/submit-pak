@@ -22,6 +22,11 @@
             "AlRimi\\Submit\\": "src/"
         }
     },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php artisan submit:update-vite"
+        ]
+    },
     "extra": {
         "laravel": {
             "providers": [

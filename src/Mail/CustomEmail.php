@@ -33,7 +33,7 @@ class CustomEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('New Submission Notification')
+        return $this->subject('New Submission')
                     ->markdown('emails.submission_email')
                     ->with([
                         'studentId' => $this->studentId,

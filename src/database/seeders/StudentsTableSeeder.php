@@ -1,6 +1,6 @@
 <?php
 
-namespace AlRimi\Submit\Database\Seeders;
+namespace Database\Seeders;
 
 use AlRimi\Submit\Models\Student;
 use Illuminate\Database\Seeder;
