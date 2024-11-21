@@ -96,12 +96,5 @@ composer remove al-rimi/submit
 ## **Support**
 For questions or issues, please visit the [issues page](https://github.com/Al-rimi/submit-pak/issues).
 
-
-## **Author**
-- **Name**: Al Raimi Abdullah
-- **Email**: [abdullah@syalux.com](mailto:abdullah@syalux.com)
-- **GitHub**: [github.com/Al-rimi](https://github.com/Al-rimi)
-
-
 ## **License**
 This package is open-source and licensed under the [MIT License](LICENSE).
