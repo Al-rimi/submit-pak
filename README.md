@@ -1,8 +1,8 @@
 # **Submit Package**
 
 <p align="center">
-    <img src="screenshots/screenshot-1.jpg" alt="Screenshot 1" width="30%">
-    <img src="screenshots/screenshot-2.jpg" alt="Screenshot 2" width="30%">
+    <img src="screenshots/screenshot-1.jpg" alt="Screenshot 1" width="20%">
+    <img src="screenshots/screenshot-2.jpg" alt="Screenshot 2" width="20%">
 </p>
 
 The **Submit** package provides a simple and customizable system for managing student submissions. Designed for Laravel applications, it offers essential tools to streamline student assignment submission processes with minimal setup.
@@ -18,13 +18,18 @@ composer require al-rimi/submit
 ```bash
 php artisan submit:install
 ```
-> This command performs the following tasks:
-> 1. Publishes assets, views, and configuration files.
-> 2. Installs necessary Node.js dependencies.
-> 3. Updates the `vite.config.js` file with Submit assets (`submit.css` and `submit.js`).
-> 4. Builds assets using `npm run build`.
-> 5. Runs database migrations.
-> 6. Seeds the database with example data.
+<details>
+<summary>This command performs the following tasks:</summary>
+
+
+  1. Publishes assets, views, and configuration files.
+  2. Installs necessary Node.js dependencies.
+  3. Updates the `vite.config.js` file with Submit assets (`submit.css` and `submit.js`).
+  4. Builds assets using `npm run build`.
+  5. Runs database migrations.
+  6. Seeds the database with example data.
+
+</details>
 
 ## **Features**
 - **Submission Management**: Collect, validate, and store student submissions effectively.
@@ -64,26 +69,29 @@ The package provides database migrations and a sample seeder to kickstart your s
 
 ## **Troubleshooting**
 
-#### Vite Configuration
+<details>
+<summary><strong>Vite Configuration</strong></summary>
 The package automatically adds `resources/css/submit.css` and `resources/js/submit.js` to `vite.config.js`. If this step fails, manually update your `vite.config.js` file:
-```javascript
-export default defineConfig({
-    input: [
-        'resources/css/app.css',
-        'resources/js/app.js',
-        'resources/css/submit.css',
-        'resources/js/submit.js'
-    ],
-    // other Vite configuration
-});
-```
 
-#### Build Issues
+    export default defineConfig({
+        input: [
+            'resources/css/app.css',
+            'resources/js/app.js',
+            'resources/css/submit.css',
+            'resources/js/submit.js'
+        ],
+        // other Vite configuration
+    });
+
+</details>
+
+<details>
+<summary><strong>Build Issues</strong></summary>
 If you encounter build issues, ensure Node.js and npm are properly installed. Then rerun:
-```bash
-npm install
-npm run build
-```
+
+    npm install
+    npm run build
+</details>
 
 ## **Uninstallation**
 
@@ -96,14 +104,13 @@ php artisan submit:uninstall
 composer remove al-rimi/submit
 ```
 
-> ## **Requirements**
-> - PHP 8.0 or higher  
-> - Laravel 10.x or 11.x  
-> - Node.js (for Vite asset compilation)  
->
-> ## **Support**
+## **Requirements**
+- PHP 8.0 or higher  
+- Laravel 10.x or 11.x  
+- Node.js (for Vite asset compilation)  
+
 > Have questions or facing issues? Check out the [issues page](https://github.com/Al-rimi/submit-pak/issues).  
->
-> ## **License**
-> This package is open-source and is licensed under the [MIT License](LICENSE).  
+
+## **License**
+This package is open-source and is licensed under the [MIT License](LICENSE).  
 
