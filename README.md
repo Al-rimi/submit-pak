@@ -30,18 +30,6 @@ php artisan submit:install
   6. Seeds the database with example data.
 
 </details>
-<details>
-<summary>This command performs the following tasks:</summary>
-
-
-  1. Publishes assets, views, and configuration files.
-  2. Installs necessary Node.js dependencies.
-  3. Updates the `vite.config.js` file with Submit assets (`submit.css` and `submit.js`).
-  4. Builds assets using `npm run build`.
-  5. Runs database migrations.
-  6. Seeds the database with example data.
-
-</details>
 
 ## **Features**
 - **Submission Management**: Collect, validate, and store student submissions effectively.
