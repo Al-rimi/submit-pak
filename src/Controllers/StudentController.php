@@ -50,15 +50,17 @@ class StudentController
                 }
             }
 
-            // Increment the student's submission count
             $student->increment('submit_count');
 
-            // Send a notification email to the configured admin email address
-            $recipientEmail = config('submit.notification_email');
-            Mail::to($recipientEmail)->send(new SubmitEmail(
-                $student->student_id,
-                $student->student_name
-            ));
+            try {
+                $recipientEmail = config('submit.notification_email');
+                Mail::to($recipientEmail)->send(new SubmitEmail(
+                    $student->student_id,
+                    $student->student_name
+                ));
+            } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'Files submitted, but email notification failed.');
+            }
 
             // Redirect back with a success message
             return redirect()->back()->with('success', 'Files submitted successfully.');
