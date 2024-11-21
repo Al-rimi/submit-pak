@@ -46,8 +46,9 @@ php artisan submit:install
 ## **Features**
 - **Submission Management**: Collect, validate, and store student submissions effectively.
 - **Email Notifications**: Rreceive notifications after each submission.
-- **Customizable Views**: Easily adjust the user interface to suit your needs.
-- **Public table**: Notify users upon submission completion.
+- **Dynamic Table Management**: Displays and updates student submissions dynamically without page reloads.
+- **Auto-fill**: Custom JS script for client side auto fill.
+- **UI**: vanilla CSS with simple animations and clean look..
 
 ## **Customization**  
 
