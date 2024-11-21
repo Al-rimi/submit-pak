@@ -17,7 +17,7 @@ class InstallSubmitCommand extends Command
     public function handle()
     {
         try {
-            $this->call('vendor:publish', ['--tag' => 'laravel-assets', '--force' => true]);
+            $this->call('vendor:publish', ['--tag' => 'submit-assets', '--force' => true]);
             $this->info('Assets published.');
 
             $this->runShellCommand('npm install', 'NPM dependencies installed.');

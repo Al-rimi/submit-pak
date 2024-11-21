@@ -3,7 +3,7 @@
 namespace AlRimi\Submit\Controllers;
 
 use AlRimi\Submit\Models\Student;
-use AlRimi\Submit\Mail\CustomEmail;
+use AlRimi\Submit\Mail\SubmitEmail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

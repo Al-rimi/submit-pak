@@ -184,7 +184,7 @@ document.getElementById('submission-form').addEventListener('submit', function(e
         } else {
             clearInterval(interval);
             document.getElementById('progress-bar').style.width = '100%';
-            document.getElementById('progress-bar').textContent = 'failed: Content too large';
+            document.getElementById('progress-bar').textContent = 'failed: ' + xhr.status;
             document.getElementById('progress-bar').style.backgroundColor = 'red';
             document.getElementById('submit-button').style.display = 'block';
             document.getElementById('submit-button').disabled = false;
