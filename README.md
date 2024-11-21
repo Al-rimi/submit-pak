@@ -2,7 +2,6 @@
 <p align="center">
     <img src="screenshots/screenshot-1.jpg" alt="Screenshot 1" width="30%">
     <img src="screenshots/screenshot-2.jpg" alt="Screenshot 2" width="30%">
-    <img src="screenshots/screenshot-3.jpg" alt="Screenshot 3" width="30%">
 </p>
 The **Submit** package provides a simple and customizable system for managing student submissions. Designed for Laravel applications, it offers essential tools to streamline student assignment submission processes with minimal setup.
 
@@ -31,28 +30,34 @@ This command performs the following tasks:
 - **Customizable Views**: Easily adjust the user interface to suit your needs.
 - **Public table**: Notify users upon submission completion.
 
-## **Customization**
+## **Customization**  
 
-### env
-Add those two in your .env file:
-```env
-NOTIFICATION_EMAIL=
-SUBMISSION_DEADLINE=    #in ISO 8601 format (e.g., "YYYY-MM-DDTHH:MM:SS")
-```
+### **Environment Variables**  
+To enable submission notifications and set a deadline, add the following variables to your `.env` file:  
+```env  
+NOTIFICATION_EMAIL=      # Email address to receive submission notifications  
+SUBMISSION_DEADLINE=     # Submission deadline in ISO 8601 format (e.g., "YYYY-MM-DDTHH:MM:SS")  
+```  
 
-### Routes
-Routes file is published to `routes/submit.php`. Modify it to customize:
-- View paths
+### **Routes**  
+The package publishes its routes to `routes/submit.php`. You can customize these routes to:  
+- Change view paths.  
+- Add middleware for additional security or access control.  
 
-### Views
-The submissions and the email is published to `resources/views/submissions.blade.php` and `resources/views/emails/submissions_email.blade.php`.
+### **Views**  
+All customizable views are published to your project for easy modification:  
+- **Submission Page**: `resources/views/submissions.blade.php`  
+- **Email Template**: `resources/views/emails/submissions_email.blade.php`  
 
-### CSS and JavaScript
-- CSS: `resources/css/submit.css`
-- JavaScript: `resources/js/submit.js`
+### **CSS and JavaScript**  
+dependency-free assets for styling and interactivity in **vanilla CSS and JavaScript**:  
+- **CSS File**: `resources/css/submit.css`  
+- **JavaScript File**: `resources/js/submit.js`  
 
-### Database
-The package provides migrations and a seeder (`database/Seeders/sedStudentsTableSeeder.php`). You can extend or adjust these as needed.
+### **Database**  
+The package provides database migrations and a sample seeder to kickstart your setup:  
+- **Migrations**: Automatically created tables for submission data.  
+- **Seeder**: `database/Seeders/StudentsTableSeeder.php` populates the database with example records.  
 
 
 ## **Troubleshooting**
