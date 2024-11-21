@@ -1,6 +1,6 @@
 # **Submit Package**
 
-The **Submit** package provides a simple and customizable system for managing student submissions. Designed for Laravel applications, it offers essential tools to streamline student assignment submission processes with minimal setup.
+Simple and customizable system for managing submissions. Designed for Laravel applications, it offers essential tools to streamline assignment submission processes with minimal setup.
 
 ## **Installation**
 
@@ -23,20 +23,21 @@ This command performs the following tasks:
 
 ## **Features**
 - **Submission Management**: Collect, validate, and store student submissions effectively.
-- **Email Notifications**: Notify user upon submission completion.
+- **Email Notifications**: Rreceive notifications after each submission.
 - **Customizable Views**: Easily adjust the user interface to suit your needs.
-- **Email Notifications**: Notify users upon submission completion.
-- **Database Migrations and Seeders**: Quickly set up and populate required tables.
+- **Public table**: Notify users upon submission completion.
 
 ## **Customization**
 
-### Config
-Configuration file is published to `config/submit.php`. You can modify it to customize:
-- Notification email
-- Submission deadline
+### env
+Add those two in your .env file:
+```env
+NOTIFICATION_EMAIL=
+SUBMISSION_DEADLINE=    #in ISO 8601 format (e.g., "YYYY-MM-DDTHH:MM:SS")
+```
 
 ### Routes
-Routes file is published to `routes/submit.php`. You can modify it to customize:
+Routes file is published to `routes/submit.php`. Modify it to customize:
 - View paths
 
 ### Views
