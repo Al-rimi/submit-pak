@@ -31,6 +31,18 @@ php artisan submit:install
   6. Seeds the database with example data.
 
 </details>
+<details>
+<summary>This command performs the following tasks:</summary>
+
+
+  1. Publishes assets, views, and configuration files.
+  2. Installs necessary Node.js dependencies.
+  3. Updates the `vite.config.js` file with Submit assets (`submit.css` and `submit.js`).
+  4. Builds assets using `npm run build`.
+  5. Runs database migrations.
+  6. Seeds the database with example data.
+
+</details>
 
 ## **Features**
 - **Submission Management**: Collect, validate, and store student submissions effectively.
@@ -72,7 +84,21 @@ The package provides database migrations and a sample seeder to kickstart your s
 
 <details>
 <summary><strong>Vite Configuration</strong></summary>
+<details>
+<summary><strong>Vite Configuration</strong></summary>
 The package automatically adds `resources/css/submit.css` and `resources/js/submit.js` to `vite.config.js`. If this step fails, manually update your `vite.config.js` file:
+
+    export default defineConfig({
+        input: [
+            'resources/css/app.css',
+            'resources/js/app.js',
+            'resources/css/submit.css',
+            'resources/js/submit.js'
+        ],
+        // other Vite configuration
+    });
+
+</details>
 
     export default defineConfig({
         input: [
@@ -88,7 +114,13 @@ The package automatically adds `resources/css/submit.css` and `resources/js/subm
 
 <details>
 <summary><strong>Build Issues</strong></summary>
+<details>
+<summary><strong>Build Issues</strong></summary>
 If you encounter build issues, ensure Node.js and npm are properly installed. Then rerun:
+
+    npm install
+    npm run build
+</details>
 
     npm install
     npm run build
@@ -104,6 +136,11 @@ php artisan submit:uninstall
 ```bash
 composer remove al-rimi/submit
 ```
+
+## **Requirements**
+- PHP 8.0 or higher  
+- Laravel 10.x or 11.x  
+- Node.js (for Vite asset compilation)  
 
 ## **Requirements**
 - PHP 8.0 or higher  
