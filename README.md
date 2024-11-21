@@ -1,5 +1,9 @@
 # **Submit Package**
-
+<p align="center">
+    <img src="screenshots/screenshot-1.jpg" alt="Screenshot 1" width="30%">
+    <img src="screenshots/screenshot-2.jpg" alt="Screenshot 2" width="30%">
+    <img src="screenshots/screenshot-3.jpg" alt="Screenshot 3" width="30%">
+</p>
 The **Submit** package provides a simple and customizable system for managing student submissions. Designed for Laravel applications, it offers essential tools to streamline student assignment submission processes with minimal setup.
 
 ## **Installation**
