@@ -54,7 +54,7 @@ class UninstallSubmitCommand extends Command
 
         if (File::exists($viteConfigPath)) {
             $viteConfig = file_get_contents($viteConfigPath);
-            $pattern = "/'resources\/css\/submit\.css',\s*'resources\/js\/submit\.js',?\s*/";
+            $pattern = "/'resources\/css\/submit\.css,',\s*'resources\/js\/submit\.js,',?\s*/";
 
             if (preg_match($pattern, $viteConfig)) {
                 $viteConfig = preg_replace($pattern, '', $viteConfig);

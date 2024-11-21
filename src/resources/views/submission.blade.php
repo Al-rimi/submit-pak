@@ -40,20 +40,31 @@
     <main class="mainContainer">
         <div id="divForm" class="divForm ">
             <h3>Submit your project</h3>
-            <form id="submission-form" enctype="multipart/form-data" @if (!$isPastDeadline) action="{{ route('students.submit') }}" method="POST" @endif>
+            <form id="submission-form" enctype="multipart/form-data"
+                @if (!$isPastDeadline) action="{{ route('students.submit') }}" method="POST" @endif>
                 @csrf
                 <div id="progress-container" class="progress-container" style="display: none">
                     <div id="progress-bar" class="progress-bar"></div>
                 </div>
-                <input id="student-name" type="name" name="name" placeholder="Name"
-                    @if (session('success') || $errors->any()) value="{{ session('success') ? session('success') : implode(' ', $errors->all()) }}"
-                    style="color: {{ $errors->any() ? 'red' : (session('success') ? 'green' : '') }};" @endif
-                    readonly class="countdown">
+                @php
+                    $inputValue = session('success')
+                        ? session('success')
+                        : (isset($errors) && $errors->any()
+                            ? implode(' ', $errors->all())
+                            : '');
+
+                    $inputStyle = session('success')
+                        ? 'color: green;'
+                        : (isset($errors) && $errors->any() ? 'color: red;' : '');
+                @endphp
+                <input id="student-name" type="name" name="name" placeholder="Name" value="{{ $inputValue }}"
+                    style="{{ $inputStyle }}" readonly class="countdown">
+
 
                 <input type="text" id="student-id" name="id" placeholder="Student ID" maxlength="12"
                     oninput="validateAndAutoFill()" autocomplete="off">
                 <input type="file" id="file-upload" name="files[]" accept="*/*" multiple>
-                <button id="submit-button" @if($isPastDeadline) disabled @endif>Submit</button>
+                <button id="submit-button" @if ($isPastDeadline) disabled @endif>Submit</button>
             </form>
         </div>
         <div id="divTable" class="divTable ">
