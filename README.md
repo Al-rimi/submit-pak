@@ -5,13 +5,11 @@ The **Submit** package provides a simple and customizable system for managing st
 ## **Installation**
 
 ### Step 1: Install the Package
-Install the package via Composer:
 ```bash
 composer require al-rimi/submit
 ```
 
 ### Step 2: Run the Installation Command
-Set up everything in one step:
 ```bash
 php artisan submit:install
 ```
