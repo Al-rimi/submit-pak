@@ -5,7 +5,7 @@
     <img src="screenshots/screenshot-phone.jpg" alt="Screenshot Phone" height="320px">
 </p>
 
-The **Submit** package provides a simple and customizable system for managing student submissions. Designed for Laravel applications, it offers essential tools to streamline student assignment submission processes with minimal setup.
+A simple and customizable system for managing submissions. Designed for Laravel applications, it offers essential tools to streamline submission processes with minimal setup.
 
 ## **Installation**
 
@@ -72,8 +72,7 @@ The package provides database migrations and a sample seeder to kickstart your s
 
 <details>
 <summary><strong>Vite Configuration</strong></summary>
-<details>
-<summary><strong>Vite Configuration</strong></summary>
+
 The package automatically adds `resources/css/submit.css` and `resources/js/submit.js` to `vite.config.js`. If this step fails, manually update your `vite.config.js` file:
 
     export default defineConfig({
@@ -88,27 +87,10 @@ The package automatically adds `resources/css/submit.css` and `resources/js/subm
 
 </details>
 
-    export default defineConfig({
-        input: [
-            'resources/css/app.css',
-            'resources/js/app.js',
-            'resources/css/submit.css',
-            'resources/js/submit.js'
-        ],
-        // other Vite configuration
-    });
-
-</details>
-
 <details>
 <summary><strong>Build Issues</strong></summary>
-<details>
-<summary><strong>Build Issues</strong></summary>
+    
 If you encounter build issues, ensure Node.js and npm are properly installed. Then rerun:
-
-    npm install
-    npm run build
-</details>
 
     npm install
     npm run build
@@ -124,11 +106,6 @@ php artisan submit:uninstall
 ```bash
 composer remove al-rimi/submit
 ```
-
-## **Requirements**
-- PHP 8.0 or higher  
-- Laravel 10.x or 11.x  
-- Node.js (for Vite asset compilation)  
 
 ## **Requirements**
 - PHP 8.0 or higher  
