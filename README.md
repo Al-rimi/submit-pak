@@ -1,10 +1,8 @@
 # **Submit Package**
 
 
-<p align="center">
-    <img src="screenshots/screenshot-pc.jpg" alt="Screenshot PC" height="320px">
-    <img src="screenshots/screenshot-phone.jpg" alt="Screenshot Phone" height="320px">
-</p>
+[](screenshots/screenshot-pc.jpg)
+[](screenshots/screenshot-phone.jpg)
 
 A simple and customizable system for managing submissions. Designed for Laravel applications, it offers essential tools to streamline submission processes with minimal setup.
 
